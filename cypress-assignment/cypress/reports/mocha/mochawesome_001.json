@@ -1,0 +1,269 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 4,
+    "passes": 2,
+    "pending": 0,
+    "failures": 2,
+    "start": "2023-11-27T12:09:48.906Z",
+    "end": "2023-11-27T12:10:44.785Z",
+    "duration": 55879,
+    "testsRegistered": 7,
+    "passPercent": 28.57142857142857,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 3,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "f46714e9-d6bf-4b75-8244-a85df4d8c02d",
+      "title": "",
+      "fullFile": "cypress/e2e/amazon-test.cy.ts",
+      "file": "cypress/e2e/amazon-test.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8f399ab4-0200-4e1c-95a8-b4aba21da770",
+          "title": "All amazon tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "f6a0bc15-ed56-4f13-8c73-91c9b766dbf8",
+              "title": "login is not required",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should navigate from left nav to Mobiles and select Mobiles phones and get back to the main menu",
+                  "fullTitle": "All amazon tests login is not required should navigate from left nav to Mobiles and select Mobiles phones and get back to the main menu",
+                  "timedOut": null,
+                  "duration": 12441,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "homeEyes.getInitialUrl().then(function (preUrl) {\n    homeHands.navigateToMobilesAndBack();\n    homeEyes.checkCurrentUrl(preUrl);\n});",
+                  "err": {},
+                  "uuid": "2967845d-8947-4ee7-a44a-75299539e233",
+                  "parentUUID": "f6a0bc15-ed56-4f13-8c73-91c9b766dbf8",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should add to cart Today's deals product",
+                  "fullTitle": "All amazon tests login is not required should add to cart Today's deals product",
+                  "timedOut": null,
+                  "duration": 19807,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "homeHands.goToTodaysDeals();\nlistingHands.selectThirdProduct();\nproductHands.addToCartAndGoToCart();\ncartEyes.checkQuantity();",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#a-autoid-0-announce .a-dropdown-prompt`, but never found it.",
+                    "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#a-autoid-0-announce .a-dropdown-prompt`, but never found it.\n    at __webpack_modules__../cypress/robots/cart/Robot.ts.CartEyes.checkQuantity (webpack://cypress-assignment/./cypress/robots/cart/Robot.ts:34:0)\n    at Context.eval (webpack://cypress-assignment/./cypress/e2e/amazon-test.cy.ts:45:0)",
+                    "diff": null
+                  },
+                  "uuid": "6dd271be-5b86-4c8a-aa21-610d135891ad",
+                  "parentUUID": "f6a0bc15-ed56-4f13-8c73-91c9b766dbf8",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should search for mobiles and display the last item details",
+                  "fullTitle": "All amazon tests login is not required should search for mobiles and display the last item details",
+                  "timedOut": null,
+                  "duration": 12015,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "homeHands.enterSearchKey(\"mobiles\");\nlistingHands.printLastMobileNameAndPrice();\nlistingHands.getLastMobileName().then(function (name) {\n    listingHands.clickLastMobile();\n    productEyes.checkProductName(name);\n});",
+                  "err": {},
+                  "uuid": "c21f6f35-87d8-4f98-9c35-6019c29c4586",
+                  "parentUUID": "f6a0bc15-ed56-4f13-8c73-91c9b766dbf8",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "2967845d-8947-4ee7-a44a-75299539e233",
+                "c21f6f35-87d8-4f98-9c35-6019c29c4586"
+              ],
+              "failures": [
+                "6dd271be-5b86-4c8a-aa21-610d135891ad"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 44263,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "fe8c41fd-f83d-482f-bd24-a51906e55d03",
+              "title": "login is required",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Select the amazon prime delivery checkbox and get the first displayed item delivery date and Check for delivery status",
+                  "fullTitle": "All amazon tests login is required Select the amazon prime delivery checkbox and get the first displayed item delivery date and Check for delivery status",
+                  "timedOut": null,
+                  "duration": 5847,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "homeHands.enterSearchKey(\"mobiles\");\nlistingHands.selectPrimeAndPrintFirstProductDetails();",
+                  "err": {
+                    "message": "CypressError: `cy.type()` cannot accept an empty string. You need to actually type something.\n\nhttps://on.cypress.io/type\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `login is required`",
+                    "estack": "CypressError: `cy.type()` cannot accept an empty string. You need to actually type something.\n\nhttps://on.cypress.io/type\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `login is required`\n    at Context.type (https://www.amazon.in/__cypress/runner/cypress_runner.js:114397:68)\n    at wrapped (https://www.amazon.in/__cypress/runner/cypress_runner.js:138671:19)\nFrom Your Spec Code:\n    at BaseHands.typeTextonId (webpack://cypress-assignment/./cypress/robots/BaseRobot.ts:141:0)\n    at __webpack_modules__../cypress/robots/signup/Robot.ts.SignupHands.signin (webpack://cypress-assignment/./cypress/robots/signup/Robot.ts:42:0)\n    at Context.eval (webpack://cypress-assignment/./cypress/e2e/amazon-test.cy.ts:60:0)",
+                    "diff": null
+                  },
+                  "uuid": "eb122a37-23a2-4ac8-83be-b6c848e49673",
+                  "parentUUID": "fe8c41fd-f83d-482f-bd24-a51906e55d03",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Goto your orders and select Past one year order",
+                  "fullTitle": "All amazon tests login is required Goto your orders and select Past one year order",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "homeHands.goToOrders();\norderHands.listPastYearOrders();\norderEyes.checkDropdownValue();",
+                  "err": {},
+                  "uuid": "18638b37-6a6c-4b57-a115-584e26141292",
+                  "parentUUID": "fe8c41fd-f83d-482f-bd24-a51906e55d03",
+                  "isHook": false,
+                  "skipped": true
+                },
+                {
+                  "title": "Add a new delivery  address and verify the address is added",
+                  "fullTitle": "All amazon tests login is required Add a new delivery  address and verify the address is added",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "homeHands.goToAccount();\naccountHands.goToSection(3);\naddressEyes.getInitialAddressCount().then(function (count) {\n    cy.readFile(\"cypress/test-data/data.json\").then(function (credentials) {\n        addressHands.addNewAddress(credentials.name, credentials.phoneNumber, credentials.postalCode, credentials.line1, credentials.line2);\n    });\n    homeHands.goToAccount();\n    accountHands.goToSection(3);\n    addressEyes.checkAddressesCount(count);\n});",
+                  "err": {},
+                  "uuid": "0f5539f3-9059-46d4-a738-3c38a143ee76",
+                  "parentUUID": "fe8c41fd-f83d-482f-bd24-a51906e55d03",
+                  "isHook": false,
+                  "skipped": true
+                },
+                {
+                  "title": "Add a new payment option and verify payment option is added",
+                  "fullTitle": "All amazon tests login is required Add a new payment option and verify payment option is added",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "homeHands.goToAccount();\naccountHands.goToSection(4);\npaymentMethodHands.gotoUpdatePreference();\npaymentMethodEyes.getInitialAddressCount().then(function (count) {\n    paymentMethodHands.addNewPaymentMethod();\n    paymentMethodEyes.checkAddressesCount(count);\n});",
+                  "err": {},
+                  "uuid": "62b13d52-7481-4c1d-b1d2-ff6ea98c2551",
+                  "parentUUID": "fe8c41fd-f83d-482f-bd24-a51906e55d03",
+                  "isHook": false,
+                  "skipped": true
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "eb122a37-23a2-4ac8-83be-b6c848e49673"
+              ],
+              "pending": [],
+              "skipped": [
+                "18638b37-6a6c-4b57-a115-584e26141292",
+                "0f5539f3-9059-46d4-a738-3c38a143ee76",
+                "62b13d52-7481-4c1d-b1d2-ff6ea98c2551"
+              ],
+              "duration": 5847,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mocha",
+        "charts": true,
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

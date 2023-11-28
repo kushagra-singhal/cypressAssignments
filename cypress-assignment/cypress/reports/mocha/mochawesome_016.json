@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-11-27T12:17:49.351Z",
+    "end": "2023-11-27T12:18:12.235Z",
+    "duration": 22884,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fa1bd94d-eb57-47da-825b-226707dd2314",
+      "title": "",
+      "fullFile": "cypress/e2e/Assignment/PS2/userManagement.cy.ts",
+      "file": "cypress/e2e/Assignment/PS2/userManagement.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "519f9dac-c217-4ef5-97a9-a9dc77ee2b8a",
+          "title": "User Management Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login and Store ID in Local Storage",
+              "fullTitle": "User Management Tests Login and Store ID in Local Storage",
+              "timedOut": null,
+              "duration": 4581,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"input[name=username]\").type(\"Admin\");\ncy.get(\"input[name=password]\").type(\"admin123\");\ncy.get(\"button[type=submit]\").click();\nvar userID = generateID();\nwindow.localStorage.setItem(\"userID\", userID);",
+              "err": {},
+              "uuid": "6ba0497a-45ee-4268-a013-08aa835857be",
+              "parentUUID": "519f9dac-c217-4ef5-97a9-a9dc77ee2b8a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Create User with Stored ID",
+              "fullTitle": "User Management Tests Create User with Stored ID",
+              "timedOut": null,
+              "duration": 8011,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var userID = window.localStorage.getItem(\"userID\");\nvar username = \"user\".concat(userID);\nvar password = \"password\".concat(userID);\ncy.get(\"ul.oxd-main-menu li\").eq(0).click();\ncy.contains(\"Add\").click();\ncy.get(\".oxd-userdropdown-name\")\n    .invoke(\"text\")\n    .then(function (tempUserName) {\n    cy.get(\".oxd-select-text-input\")\n        .eq(0)\n        .click()\n        .type(\"{downArrow}\")\n        .type(\"{enter}\")\n        .tab()\n        .type(tempUserName)\n        .wait(2000)\n        .type(\"{downArrow}{enter}\")\n        .tab()\n        .type(\"{downArrow}\")\n        .type(\"{enter}\")\n        .tab()\n        .type(username)\n        .tab()\n        .type(password)\n        .tab()\n        .type(password)\n        .tab()\n        .tab()\n        .click();\n});",
+              "err": {},
+              "uuid": "9a79fded-f6c8-4409-bdad-f341572b48be",
+              "parentUUID": "519f9dac-c217-4ef5-97a9-a9dc77ee2b8a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete User",
+              "fullTitle": "User Management Tests Delete User",
+              "timedOut": null,
+              "duration": 6635,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var userID = window.localStorage.getItem(\"userID\");\ncy.wait(5000);\ncy.get(\".oxd-form input\").first().type(\"user\".concat(userID));\ncy.get(\".oxd-form button\").last().click();\ncy.get(\".oxd-table-card .oxd-table-cell\", { timeout: 10000 })\n    .contains(\"user\".concat(userID))\n    .should(\"exist\");\ncy.get(\".oxd-table-cell-actions button\").first().click();\ncy.get(\".orangehrm-modal-footer button\").last().click();",
+              "err": {},
+              "uuid": "f7139912-a8e8-4c80-a2d9-8c549ca9e3e5",
+              "parentUUID": "519f9dac-c217-4ef5-97a9-a9dc77ee2b8a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6ba0497a-45ee-4268-a013-08aa835857be",
+            "9a79fded-f6c8-4409-bdad-f341572b48be",
+            "f7139912-a8e8-4c80-a2d9-8c549ca9e3e5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 19227,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mocha",
+        "charts": true,
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

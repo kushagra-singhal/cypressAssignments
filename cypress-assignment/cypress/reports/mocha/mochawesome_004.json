@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-11-27T12:11:50.945Z",
+    "end": "2023-11-27T12:11:51.657Z",
+    "duration": 712,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4cc45e67-8dd9-4c58-be59-4e473c7ef3ed",
+      "title": "",
+      "fullFile": "cypress/e2e/Assignment/PS1/palindrome.cy.ts",
+      "file": "cypress/e2e/Assignment/PS1/palindrome.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "73abad17-c401-4146-86ec-db4b5d063227",
+          "title": "Palindrome Function Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Checks if a string is a palindrome",
+              "fullTitle": "Palindrome Function Test Checks if a string is a palindrome",
+              "timedOut": null,
+              "duration": 638,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.exec('node cypress/support/palindrome.js \"A man, a plan, a canal, Panama\"').then(function (result) {\n    var output = result.stdout.trim();\n    cy.log(\"Palindrome Check: \".concat(output));\n    expect(output).to.eq(\"true\");\n});",
+              "err": {
+                "message": "AssertionError: expected '\\u001b[33mtrue\\u001b[39m' to equal 'true'",
+                "estack": "AssertionError: expected '\\u001b[33mtrue\\u001b[39m' to equal 'true'\n    at Context.eval (webpack://cypress-assignment/./cypress/e2e/Assignment/PS1/palindrome.cy.ts:21:0)",
+                "diff": "- '\\u001b[33mtrue\\u001b[39m'\n+ 'true'\n"
+              },
+              "uuid": "542ab93d-e1e6-4a5f-96da-0756e93e48c6",
+              "parentUUID": "73abad17-c401-4146-86ec-db4b5d063227",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "542ab93d-e1e6-4a5f-96da-0756e93e48c6"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 638,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mocha",
+        "charts": true,
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

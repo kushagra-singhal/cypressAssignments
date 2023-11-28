@@ -1,0 +1,168 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-11-27T12:10:47.311Z",
+    "end": "2023-11-27T12:10:56.297Z",
+    "duration": 8986,
+    "testsRegistered": 4,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 3,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "2c87d613-be57-4b85-b41f-dcf81ea9e6d5",
+      "title": "",
+      "fullFile": "cypress/e2e/withLogin/withLogin.cy.ts",
+      "file": "cypress/e2e/withLogin/withLogin.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e0d14fbb-e3ca-40e3-a992-2cddd29a766a",
+          "title": "with login tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Select the amazon prime delivery checkbox and get the first displayed item delivery date and Check for delivery status",
+              "fullTitle": "with login tests Select the amazon prime delivery checkbox and get the first displayed item delivery date and Check for delivery status",
+              "timedOut": null,
+              "duration": 5398,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "homeHands.enterSearchKey(\"mobiles\");\nlistingHands.selectPrimeAndPrintFirstProductDetails();",
+              "err": {
+                "message": "CypressError: `cy.type()` cannot accept an empty string. You need to actually type something.\n\nhttps://on.cypress.io/type\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `with login tests`",
+                "estack": "CypressError: `cy.type()` cannot accept an empty string. You need to actually type something.\n\nhttps://on.cypress.io/type\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `with login tests`\n    at Context.type (https://www.amazon.in/__cypress/runner/cypress_runner.js:114397:68)\n    at wrapped (https://www.amazon.in/__cypress/runner/cypress_runner.js:138671:19)\nFrom Your Spec Code:\n    at BaseHands.typeTextonId (webpack://cypress-assignment/./cypress/robots/BaseRobot.ts:141:0)\n    at __webpack_modules__../cypress/robots/signup/Robot.ts.SignupHands.signin (webpack://cypress-assignment/./cypress/robots/signup/Robot.ts:42:0)\n    at Context.eval (webpack://cypress-assignment/./cypress/e2e/withLogin/withLogin.cy.ts:25:0)",
+                "diff": null
+              },
+              "uuid": "4f74f784-ea98-4f3c-b6bf-5b010e79068b",
+              "parentUUID": "e0d14fbb-e3ca-40e3-a992-2cddd29a766a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Goto your orders and select Past one year order",
+              "fullTitle": "with login tests Goto your orders and select Past one year order",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "homeHands.goToOrders();\norderHands.listPastYearOrders();\norderEyes.checkDropdownValue();",
+              "err": {},
+              "uuid": "afaa743d-9b1d-4ff7-a27c-511eeb856e31",
+              "parentUUID": "e0d14fbb-e3ca-40e3-a992-2cddd29a766a",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Add a new delivery  address and verify the address is added",
+              "fullTitle": "with login tests Add a new delivery  address and verify the address is added",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "homeHands.goToAccount();\naccountHands.goToSection(3);\naddressEyes.getInitialAddressCount().then(function (count) {\n    cy.readFile(\"cypress/test-data/data.json\").then(function (credentials) {\n        addressHands.addNewAddress(credentials.name, credentials.phoneNumber, credentials.postalCode, credentials.line1, credentials.line2);\n    });\n    homeHands.goToAccount();\n    accountHands.goToSection(3);\n    addressEyes.checkAddressesCount(count);\n});",
+              "err": {},
+              "uuid": "68d92fd4-0eee-4564-b735-c9c723b7d358",
+              "parentUUID": "e0d14fbb-e3ca-40e3-a992-2cddd29a766a",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Add a new payment option and verify payment option is added",
+              "fullTitle": "with login tests Add a new payment option and verify payment option is added",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "homeHands.goToAccount();\naccountHands.goToSection(4);\npaymentMethodHands.gotoUpdatePreference();\npaymentMethodEyes.getInitialAddressCount().then(function (count) {\n    paymentMethodHands.addNewPaymentMethod();\n    paymentMethodEyes.checkAddressesCount(count);\n});",
+              "err": {},
+              "uuid": "e2343864-da6b-4b4b-9341-01951b9f7810",
+              "parentUUID": "e0d14fbb-e3ca-40e3-a992-2cddd29a766a",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "4f74f784-ea98-4f3c-b6bf-5b010e79068b"
+          ],
+          "pending": [],
+          "skipped": [
+            "afaa743d-9b1d-4ff7-a27c-511eeb856e31",
+            "68d92fd4-0eee-4564-b735-c9c723b7d358",
+            "e2343864-da6b-4b4b-9341-01951b9f7810"
+          ],
+          "duration": 5398,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mocha",
+        "charts": true,
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

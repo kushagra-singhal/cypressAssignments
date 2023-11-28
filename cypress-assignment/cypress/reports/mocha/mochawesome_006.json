@@ -1,0 +1,163 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-11-27T12:12:20.251Z",
+    "end": "2023-11-27T12:12:25.206Z",
+    "duration": 4955,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a2aa47fc-14b7-4a86-9bcf-e534547eb89c",
+      "title": "",
+      "fullFile": "cypress/e2e/Assignment/PS3/shoppingCart.cy.ts",
+      "file": "cypress/e2e/Assignment/PS3/shoppingCart.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "35506673-80dc-4b34-943d-c3a0ac0cdf50",
+          "title": "Shopping Cart Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Display Correct Data - Positive Scenario",
+              "fullTitle": "Shopping Cart Tests Display Correct Data - Positive Scenario",
+              "timedOut": null,
+              "duration": 1160,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.readFile(\"cypress/test-data/data2.json\").then(function (urls) {\n    cy.visit(urls.shoppingCart.BASE_URL);\n    cy.contains(\"Add to cart\").should(\"have.length.greaterThan\", 0);\n});",
+              "err": {},
+              "uuid": "a05ccee9-1343-43fc-98b6-656d7a4bcdb8",
+              "parentUUID": "35506673-80dc-4b34-943d-c3a0ac0cdf50",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Intercept API request and check data",
+              "fullTitle": "Shopping Cart Tests Intercept API request and check data",
+              "timedOut": null,
+              "duration": 654,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "Cypress.on(\"uncaught:exception\", function (err, runnable) {\n    return false;\n});\ncy.readFile(\"cypress/test-data/data2.json\").then(function (urls) {\n    cy.intercept(\"GET\", urls.shoppingCart.BE_URL).as(\"getData\");\n    cy.visit(urls.shoppingCart.BASE_URL);\n    cy.wait(\"@getData\").then(function (interception) {\n        var _a;\n        var responseBody = (_a = interception.response) === null || _a === void 0 ? void 0 : _a.body;\n        if (typeof responseBody === \"object\") {\n            expect(responseBody).to.have.property(\"products\");\n        }\n    });\n});",
+              "err": {},
+              "uuid": "20b40fb7-a75f-4b7a-b2b4-25c2650a19d3",
+              "parentUUID": "35506673-80dc-4b34-943d-c3a0ac0cdf50",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Error Handling - Mock 500 Internal Server Error",
+              "fullTitle": "Shopping Cart Tests Error Handling - Mock 500 Internal Server Error",
+              "timedOut": null,
+              "duration": 263,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "Cypress.on(\"uncaught:exception\", function (err, runnable) {\n    return false;\n});\ncy.readFile(\"cypress/test-data/data2.json\").then(function (urls) {\n    cy.intercept(\"GET\", urls.shoppingCart.BE_URL, function (req) {\n        req.reply({\n            statusCode: 500,\n            body: \"ERROR: Internal Server Error\",\n        });\n    }).as(\"getError\");\n    cy.visit(urls.shoppingCart.BASE_URL, {\n        failOnStatusCode: false,\n    });\n    cy.wait(\"@getError\").then(function (interception) {\n        var _a;\n        expect((_a = interception.response) === null || _a === void 0 ? void 0 : _a.statusCode).to.eq(500);\n    });\n});",
+              "err": {},
+              "uuid": "3ef0bba9-6cca-4532-a282-ebf68991dcfd",
+              "parentUUID": "35506673-80dc-4b34-943d-c3a0ac0cdf50",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Error Handling - Mock 404 Not Found",
+              "fullTitle": "Shopping Cart Tests Error Handling - Mock 404 Not Found",
+              "timedOut": null,
+              "duration": 328,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.readFile(\"cypress/test-data/data2.json\").then(function (urls) {\n    cy.intercept(urls.shoppingCart.BE_URL, {\n        statusCode: 404,\n        body: \"Not Found: Resource not available\",\n    }).as(\"getNotFound\");\n    cy.visit(urls.shoppingCart.BASE_URL, {\n        failOnStatusCode: false,\n    });\n    cy.wait(\"@getNotFound\").then(function (interception) {\n        var _a;\n        expect((_a = interception.response) === null || _a === void 0 ? void 0 : _a.statusCode).to.eq(404);\n    });\n});",
+              "err": {},
+              "uuid": "06fb509b-831e-4107-95ab-f16e8bc437ef",
+              "parentUUID": "35506673-80dc-4b34-943d-c3a0ac0cdf50",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a05ccee9-1343-43fc-98b6-656d7a4bcdb8",
+            "20b40fb7-a75f-4b7a-b2b4-25c2650a19d3",
+            "3ef0bba9-6cca-4532-a282-ebf68991dcfd",
+            "06fb509b-831e-4107-95ab-f16e8bc437ef"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2405,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mocha",
+        "charts": true,
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

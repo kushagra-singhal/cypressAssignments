@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-11-27T12:17:31.309Z",
+    "end": "2023-11-27T12:17:46.776Z",
+    "duration": 15467,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9e98b317-4a10-4800-8e74-bacbb32f856a",
+      "title": "",
+      "fullFile": "cypress/e2e/Assignment/PS5/testLogin.cy.ts",
+      "file": "cypress/e2e/Assignment/PS5/testLogin.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c3bdcc0c-d1e5-466c-ad6d-14b187086b61",
+          "title": "Login Flow Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login - Login with incorrect username",
+              "fullTitle": "Login Flow Test Login - Login with incorrect username",
+              "timedOut": null,
+              "duration": 4969,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#username\").type(data.username);\ncy.get(\"#password\").type(data.password);\ncy.get(\"#submit\").click();\ncy.get(data.assertionid).should(\"contain\", data.assertion);",
+              "err": {},
+              "uuid": "3a42b3e6-ebe1-4a82-b460-8a6ca549640b",
+              "parentUUID": "c3bdcc0c-d1e5-466c-ad6d-14b187086b61",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login - Login with incorrect password",
+              "fullTitle": "Login Flow Test Login - Login with incorrect password",
+              "timedOut": null,
+              "duration": 2305,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#username\").type(data.username);\ncy.get(\"#password\").type(data.password);\ncy.get(\"#submit\").click();\ncy.get(data.assertionid).should(\"contain\", data.assertion);",
+              "err": {},
+              "uuid": "135d4c4c-b623-49b5-92df-debd33144f0e",
+              "parentUUID": "c3bdcc0c-d1e5-466c-ad6d-14b187086b61",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login - Login with valid credentials",
+              "fullTitle": "Login Flow Test Login - Login with valid credentials",
+              "timedOut": null,
+              "duration": 3448,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#username\").type(data.username);\ncy.get(\"#password\").type(data.password);\ncy.get(\"#submit\").click();\ncy.get(data.assertionid).should(\"contain\", data.assertion);",
+              "err": {},
+              "uuid": "c6160569-1a28-477a-80cf-bfb4710ead0f",
+              "parentUUID": "c3bdcc0c-d1e5-466c-ad6d-14b187086b61",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3a42b3e6-ebe1-4a82-b460-8a6ca549640b",
+            "135d4c4c-b623-49b5-92df-debd33144f0e",
+            "c6160569-1a28-477a-80cf-bfb4710ead0f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10722,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mocha",
+        "charts": true,
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
