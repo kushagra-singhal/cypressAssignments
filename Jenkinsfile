@@ -6,7 +6,6 @@ pipeline {
 
         {
             steps    {
-                    /* execute commands in the scripts directory */
 
                     sh 'npm install typescript'
 
